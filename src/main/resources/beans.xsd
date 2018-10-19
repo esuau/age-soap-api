@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schema elementFormDefault="qualified"
+            xmlns="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://age.esuau.io/beans" xmlns:tns="http://age.esuau.io/beans">
+    <complexType name="person">
+        <attribute name="birthdate" type="date"></attribute>
+        <attribute name="name" type="string"></attribute>
+        <attribute name="firstName" type="string"></attribute>
+    </complexType>
+
+    <element name="calculateAgeRequest">
+        <complexType>
+            <sequence>
+                <element name="person" type="tns:person"></element>
+            </sequence>
+        </complexType>
+    </element>
+
+    <element name="calculateAge">
+        <complexType>
+            <sequence>
+                <element name="age" type="long"></element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>
